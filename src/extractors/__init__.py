@@ -1,7 +1,8 @@
 """Extractors package for EconoBot implementing the Strategy Pattern.
 
 Exports the core strategy interface ExtratorBase, concrete extractors like
-ExtratorAliExpress, and the extractor domain exceptions.
+ExtratorAliExpress, the extractor domain exceptions, and the domain strategy
+registry (obter_extrator, registrar_extrator).
 """
 
 from src.extractors.aliexpress import (
@@ -27,6 +28,18 @@ from src.extractors.base import (
     PrecoNaoEncontradoError,
     PriceNotFoundError,
 )
+from src.extractors.registry import (
+    _DEFAULT_REGISTRY,
+    _REGISTRY,
+    extrair_dominio,
+    listar_dominios_suportados,
+    obter_classe_extrator,
+    obter_extrator,
+    redefinir_registro,
+    registrar_extrator,
+    remover_extrator,
+    resetar_registro,
+)
 
 __all__ = [
     "ExtratorBase",
@@ -48,4 +61,14 @@ __all__ = [
     "DEFAULT_NAVIGATION_TIMEOUT_MS",
     "DEFAULT_POST_LOAD_WAIT_MS",
     "REGEX_PRECO_BRL",
+    "obter_extrator",
+    "registrar_extrator",
+    "obter_classe_extrator",
+    "extrair_dominio",
+    "listar_dominios_suportados",
+    "remover_extrator",
+    "resetar_registro",
+    "redefinir_registro",
+    "_REGISTRY",
+    "_DEFAULT_REGISTRY",
 ]
