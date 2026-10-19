@@ -30,3 +30,4 @@ pagina_playwright.html
 .pytest_cache/
 .coverage
 htmlcov/
+playwright_test.py
